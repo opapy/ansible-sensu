@@ -1,0 +1,8 @@
+{
+  "client": {
+    "name": "{{ inventory_hostname }}",
+    "environment": "{{ env }}",
+    "address": "{{ inventory_hostname }}",
+    "subscriptions": {{ sensu_subscriptions|to_nice_json }}
+  }
+}

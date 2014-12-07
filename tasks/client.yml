@@ -1,0 +1,12 @@
+- name: add plugins
+  copy: src=files/sensu/plugins/{{ item }} dest=/etc/sensu/plugins/{{ item }} owner=root group=root
+  with_items: sensu_plugins
+
+- name: configure client
+  template: src=templates/sensu/conf.d/client.json dest=/etc/sensu/conf.d/client.json
+
+- name: chkconfig on
+  shell: chkconfig sensu-client on
+  changed_when: true
+  notify:
+    - restart sensu-client

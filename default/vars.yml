@@ -1,0 +1,21 @@
+sensu_install_client: false
+# TODO: install server task
+# sensu_install_server: false
+
+sensu_embedded_ruby: true
+sensu_log_level: info
+seusn_rabbitmq_host: localhost
+sensu_rabbitmq_port: 5671 
+sensu_rabbitmq_user: sensu
+sensu_rabbitmq_password: mypass
+sensu_rabbitmq_vhost: /sensu
+
+# for client
+sensu_plugins:
+  - check-load.rb
+  - check-disk.rb
+  - check-mem.sh  
+  - load-metrics.rb
+  - memory-metrics.rb
+  - interface-metrics.rb
+  - disk-capacity-metrics.rb

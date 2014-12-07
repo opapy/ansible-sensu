@@ -1,0 +1,2 @@
+- name: restart sensu-client
+  shell: "/etc/init.d/sensu-client stop; /etc/init.d/sensu-client start"
